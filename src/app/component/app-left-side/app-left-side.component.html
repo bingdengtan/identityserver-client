@@ -1,0 +1,15 @@
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">  
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" *ngFor="let menu of menus" style="margin-bottom:20px;">
+      <li class="header">{{menu.header}}</li>
+      <li *ngFor="let item of menu.items" routerLinkActive="active">
+        <a routerLink="/{{item.path}}"><i class="{{item.icon}}"></i><span>{{item.title}}</span></a>
+      </li>
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>
+  

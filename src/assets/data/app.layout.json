@@ -1,0 +1,17 @@
+{
+    "layout":[
+        {
+          "header":"Navigator",
+          "items":[
+            {"title":"Clients", "path":"dashboard/home", "description":"Clients", "icon":"fa fa-book"}
+          ]
+        },
+        {
+          "header":"Administrator",
+          "items":[
+            {"title":"Roles Management", "path":"dashboard/roles", "description":"Roles Management", "icon":"fa fa-credit-card"},
+            {"title":"Users Management", "path":"dashboard/users", "description":"Users Management", "icon":"fa fa-users"}
+          ]
+        }
+    ]
+}
