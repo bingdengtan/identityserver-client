@@ -1,6 +1,6 @@
 {
 	"stsServer":"https://jeidentityserver4.azurewebsites.net",
-	"redirect_url":"https://jeidentityserveradmin.azurewebsites.net/dashboard/home",
+	"redirect_url":"https://jeidentityserveradmin.azurewebsites.net/authorized",
 	"client_id":"jeIdentityServerAdmin",
 	"response_type":"id_token",
 	"scope":"openid profile",
