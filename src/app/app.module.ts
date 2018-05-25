@@ -34,8 +34,8 @@ import { UserComponent } from './pages/user/user.component';
 
 export function loadConfig(oidcConfigService: OidcConfigService) {
   console.log('APP_INITIALIZER STARTING');
-  console.log(`oidc json path: ${window.location.origin}/assets/data/oidc.config${environment.production ? 'prod' : ''}.json`);
-  return () => oidcConfigService.load(`${window.location.origin}/assets/data/oidc.config${environment.production ? 'prod' : ''}.json`);
+  console.log(`oidc json path: ${window.location.origin}/assets/data/oidc.config${environment.production ? '.prod' : ''}.json`);
+  return () => oidcConfigService.load(`${window.location.origin}/assets/data/oidc.config${environment.production ? '.prod' : ''}.json`);
 }
 
 @NgModule({
