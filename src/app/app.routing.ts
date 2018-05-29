@@ -23,9 +23,9 @@ import { UserComponent } from './pages/user/user.component';
       { path: 'forbidden', component: ForbiddenComponent },
       { path: 'dashboard', component: DashboardComponent,
         children: [
-          { path: 'home', component: HomeComponent, canActivate: [AuthorizationGuard] },
+          { path: 'home', component: HomeComponent },
           { path: 'roles', component: RoleComponent, canActivate: [AuthorizationGuard] },
-          { path: 'users', component: UserComponent, canActivate: [AuthorizationGuard] }
+          { path: 'users', component: UserComponent}
         ]
       }
     ])

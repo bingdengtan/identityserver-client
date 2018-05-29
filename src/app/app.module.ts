@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule} from '@angular/http';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,10 +11,6 @@ import { AuthModule,
   OidcConfigService,
   AuthWellKnownEndpoints
 } from 'angular-auth-oidc-client';
-import { AuthService } from './services/auth.service';
-import { EventsService } from './services/events.service';
-import { CoreService } from './services/core.service';
-import { AuthorizationGuard } from './services/authorization.guard';
 
 import { AppRoutingModule } from './app.routing';
 import { environment } from '../environments/environment';
@@ -31,10 +27,17 @@ import { AuthorizedComponent } from './pages/authorized/authorized.component';
 import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { RoleComponent } from './pages/role/role.component';
 import { UserComponent } from './pages/user/user.component';
+import { GridComponent } from './component/grid/grid.component';
+
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { RoleService } from './services/role.service';
+import { EventsService } from './services/events.service';
+import { CoreService } from './services/core.service';
+import { CoreUtils } from './utils/core.utils';
+import { AuthorizationGuard } from './services/authorization.guard';
 
 export function loadConfig(oidcConfigService: OidcConfigService) {
-  console.log('APP_INITIALIZER STARTING');
-  console.log(`oidc json path: ${window.location.origin}/assets/data/oidc.config${environment.production ? '.prod' : ''}.json`);
   return () => oidcConfigService.load(`${window.location.origin}/assets/data/oidc.config${environment.production ? '.prod' : ''}.json`);
 }
 
@@ -52,12 +55,14 @@ export function loadConfig(oidcConfigService: OidcConfigService) {
     AuthorizedComponent,
     ForbiddenComponent,
     RoleComponent,
-    UserComponent
+    UserComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     AuthModule.forRoot()
@@ -67,7 +72,10 @@ export function loadConfig(oidcConfigService: OidcConfigService) {
     OidcConfigService,
     AuthService,
     CoreService,
+    RoleService,
     AuthorizationGuard,
+    UserService,
+    CoreUtils,
     EventsService,
     {
         provide: APP_INITIALIZER,

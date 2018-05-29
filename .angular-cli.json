@@ -21,18 +21,18 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/ionicons/dist/css/ionicons.min.css",
         "../node_modules/admin-lte/dist/css/AdminLTE.min.css",
-        "../node_modules/admin-lte/dist/css/skins/_all-skins.min.css"
+        "../node_modules/admin-lte/dist/css/skins/_all-skins.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.slim.min.js",
         "../node_modules/admin-lte/dist/js/app.min.js",
-        "../node_modules/popper.js/dist/umd/popper.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",        
         "../node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/arrive/src/arrive.js",
         "../node_modules/moment/moment.js"
       ],
