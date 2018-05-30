@@ -20,13 +20,6 @@ export class StarterComponent implements OnInit {
   }
 
   checkLogin(): void {
-    this.oidcSecurityService.getIsAuthorized().subscribe(
-      (isAuthorized: boolean) => {
-          if (isAuthorized) {
-            this.router.navigate(['/dashboard/home']);
-          } else {
-            this.oidcSecurityService.authorize();
-          }
-      });
+    this.oidcSecurityService.authorize();
   }
 }

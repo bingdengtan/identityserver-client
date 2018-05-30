@@ -100,6 +100,7 @@ export class AppModule {
         // identified by the iss (issuer) Claim as an audience.
         // The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience,
         // or if it contains additional audiences not trusted by the Client.
+        openIDImplicitFlowConfiguration.trigger_authorization_result_event = this.oidcConfigService.clientConfiguration.trigger_authorization_result_event;
         openIDImplicitFlowConfiguration.client_id = this.oidcConfigService.clientConfiguration.client_id;
         openIDImplicitFlowConfiguration.response_type = this.oidcConfigService.clientConfiguration.response_type;
         openIDImplicitFlowConfiguration.scope = this.oidcConfigService.clientConfiguration.scope;
