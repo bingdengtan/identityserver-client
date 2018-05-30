@@ -8,7 +8,7 @@ import { CoreUtils } from '../../utils/core.utils';
 import { GridColumn, GridMenu, GridComponent } from '../../component/grid/grid.component';
 
 interface IRole {
-  name: string;
+  role_name: string;
   description: string;
   creation_date: null;
   created_by: string;
@@ -28,7 +28,7 @@ export class RoleComponent implements OnInit {
   gridColumns: any[] = new Array();
   gridActions: any[] = new Array();
   funds: any[];
-  role: IRole = {name: '', description: '', creation_date: null, created_by: '', last_updated_date: null, last_updated_by: ''};
+  role: IRole = {role_name: '', description: '', creation_date: null, created_by: '', last_updated_date: null, last_updated_by: ''};
 
   constructor(public coreUtils: CoreUtils,
     public roleService: RoleService
@@ -40,7 +40,7 @@ export class RoleComponent implements OnInit {
   }
 
   menuActionNew(): void {
-    this.role = {name: '', description: '', creation_date: null, created_by: '', last_updated_date: null, last_updated_by: ''};
+    this.role = {role_name: '', description: '', creation_date: null, created_by: '', last_updated_date: null, last_updated_by: ''};
     $('#myModal').modal('show');
   }
 
